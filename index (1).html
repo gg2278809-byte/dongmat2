@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>동맛 - 주변 맛집 찾기</title>
+<meta name="theme-color" content="#F28C28">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="prog"></div>
+<div id="offline" hidden>오프라인 상태예요. 지도와 새 검색은 인터넷 연결이 필요해요.</div>
+<main>
+ <section id="home" class="view on">
+  <header><h1 id="logo"></h1><button id="locBtn" class="pill"></button><button id="srchBtn" class="icon" aria-label="검색"></button></header>
+  <div id="srchBar" hidden><input id="q" type="search" placeholder="이름, 음식 종류, 지역명 검색"><div id="hist" class="chips"></div></div>
+  <div id="chips" class="chips"></div>
+  <div class="chips radQuick"></div>
+  <input type="range" class="radRange" min="0" max="4" step="1" aria-label="검색 반경">
+  <div id="miniMap" class="map small"></div>
+  <div class="bar"><b id="count"></b><select class="sortSel" aria-label="정렬"></select></div>
+  <div id="list"></div>
+ </section>
+ <section id="mapV" class="view">
+  <div class="bar"><h2>지도</h2><button id="pickBtn" class="pill">지도에서 위치 선택</button></div>
+  <div id="bigMap" class="map big"></div>
+ </section>
+ <section id="favV" class="view"><h2>즐겨찾기</h2><div id="favList"></div></section>
+ <section id="rndV" class="view"><h2>랜덤 추천</h2><p class="mute">현재 위치·반경·카테고리 조건에 맞는 곳에서 골라요.</p><div id="rbox"></div><button id="rbtn" class="primary">오늘 뭐 먹지?</button></section>
+ <section id="setV" class="view">
+  <h2>설정</h2>
+  <h3>화면 모드</h3><div class="seg"><button data-theme="system">자동</button><button data-theme="light">라이트</button><button data-theme="dark">다크</button></div>
+  <h3>기본 검색 반경</h3><div class="chips radQuick"></div>
+  <h3>기본 정렬 방식</h3><select class="sortSel"></select>
+  <h3>앱 설치</h3><div id="install"></div>
+  <h2>저장된 정보</h2><p class="mute">이 브라우저에만 저장되며 다른 기기와 동기화되지 않아요.</p><div id="store"></div>
+ </section>
+</main>
+<nav id="nav"></nav>
+<div id="detail"></div>
+<dialog id="locSheet">
+ <h2>위치 설정</h2>
+ <button class="primary" id="gps">현재 위치 사용</button>
+ <div class="row2"><input id="addrIn" placeholder="주소 검색 (예: 서울 종로구 세종대로)"><button id="addrBtn" class="primary">검색</button></div>
+ <button class="ghost" id="pickGo">지도에서 위치 선택</button>
+ <button class="ghost" onclick="this.closest('dialog').close()">닫기</button>
+</dialog>
+<div id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/data.js"></script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

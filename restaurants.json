@@ -1,0 +1,5 @@
+[
+  {"id":"sample-1","isSample":true,"name":"예시 식당 A","category":"한식","address":"예시 주소 (실제 장소 아님)","lat":37.5672,"lng":126.9785},
+  {"id":"sample-2","isSample":true,"name":"예시 식당 B","category":"카페","address":"예시 주소 (실제 장소 아님)","lat":37.5650,"lng":126.9770},
+  {"id":"sample-3","isSample":true,"name":"예시 식당 C","category":"일식","address":"예시 주소 (실제 장소 아님)","lat":37.5700,"lng":126.9810}
+]
